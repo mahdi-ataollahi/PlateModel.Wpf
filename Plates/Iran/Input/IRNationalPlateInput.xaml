@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="PlateModel.Wpf.Plates.Iran.Input.IRNationalPlateInput"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:list="clr-namespace:PlateModel.Wpf.Plates.Iran.Input"
+    xmlns:vectors="clr-namespace:PlateModel.Wpf.Vectors.Iran"
+    xmlns:flags="clr-namespace:PlateModel.Wpf.Vectors.Flags"
+    xmlns:exbeh="clr-namespace:HAK.WpfSharedClasses.Behaviors;assembly=HAK.WpfSharedClasses"
+    xmlns:exconv="clr-namespace:HAK.WpfSharedClasses.Converters;assembly=HAK.WpfSharedClasses"
+    FlowDirection="LeftToRight" FontFamily="Tahoma"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <list:PlateLetterList x:Key="PlateLetterList"/>
+        <exconv:ValueVisibilityConverter x:Key="ValueVisibilityConverter"/>
+        <exconv:ValueInvisibilityConverter x:Key="ValueInvisibilityConverter"/>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Width="126" Height="22">
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="left_digits"
+                     BorderThickness="1,1,0,1"
+                     Padding="10,4,0,0"
+                     Width="28"
+                     MaxLength="2"
+                     KeyDown="left_digits_KeyDown"
+                     TextChanged="left_digits_TextChanged">
+                <i:Interaction.Behaviors>
+                    <exbeh:SelectAllBehavior/>
+                    <exbeh:MaskedTextboxBehavior PredefinedPattern="NonZeroDigits"/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <Viewbox HorizontalAlignment="Left" Margin="-26,2,2,2">
+                <Grid Width="48" Height="125" HorizontalAlignment="Left" Background="#FF0147A9">
+                    <Viewbox Width="40" 
+                         VerticalAlignment="Top"
+                         Margin="0,10,0,0">
+                        <flags:IranFlag/>
+                    </Viewbox>
+                    <TextBlock FontWeight="SemiBold"
+                           FontSize="16"
+                           FontFamily="Arial"
+                           VerticalAlignment="Bottom"
+                           Margin="5,3"
+                           Foreground="White" 
+                           LineStackingStrategy="BlockLineHeight" LineHeight="16">
+                        <Run>I.R.</Run>
+                        <LineBreak/>
+                        <Run>IRAN</Run>
+                    </TextBlock>
+                </Grid>
+            </Viewbox>
+
+            <ComboBox x:Name="mid_char"
+                      Width="46"
+                      FlowDirection="RightToLeft"
+                      ItemsSource="{Binding List, Source={StaticResource PlateLetterList}}"
+                      SelectionChanged="mid_char_SelectionChanged" 
+                      DropDownClosed="mid_char_DropDownClosed">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <TextBlock Text="{Binding}"
+                					   Visibility="{Binding ConverterParameter=چ, Converter={StaticResource ValueInvisibilityConverter}}"/>
+                            <Viewbox FlowDirection="LeftToRight"
+                                     Visibility="{Binding ConverterParameter=چ, Converter={StaticResource ValueVisibilityConverter}}"
+                                     Width="14">
+                                <vectors:DisabledPerson/>
+                            </Viewbox>
+                        </Grid>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox x:Name="mid_digits"
+                     BorderThickness="0,1,1,1"
+                     Padding="0,4,0,0"
+                     Width="28"
+                     MaxLength="3"
+                     KeyDown="mid_digits_KeyDown"
+                     TextChanged="mid_digits_TextChanged">
+                <i:Interaction.Behaviors>
+                    <exbeh:SelectAllBehavior/>
+                    <exbeh:MaskedTextboxBehavior PredefinedPattern="NonZeroDigits"/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <TextBox x:Name="right_digits"
+                     FontSize="9"
+                     Padding="4,6,2,0"
+                     Width="24" 
+                     MaxLength="2" 
+                     KeyDown="right_digits_KeyDown"
+                     TextChanged="right_digits_TextChanged">
+                <i:Interaction.Behaviors>
+                    <exbeh:SelectAllBehavior/>
+                    <exbeh:MaskedTextboxBehavior PredefinedPattern="NonZeroDigits"/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+        </StackPanel>
+        <Viewbox Width="20"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top" 
+                 Margin="0,3,3,0">
+            <vectors:NationalPlateIranSymbol/>
+        </Viewbox>
+    </Grid>
+</UserControl>
