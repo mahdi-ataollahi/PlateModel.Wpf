@@ -104,6 +104,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Behaviors\MaskedTextboxBehavior.cs" />
+    <Compile Include="Assets\Behaviors\SelectAllBehavior.cs" />
+    <Compile Include="Converters\ValueEqualityConverter.cs" />
+    <Compile Include="Converters\ValueInvisibilityConverter.cs" />
+    <Compile Include="Converters\ValueVisibilityConverter.cs" />
     <Compile Include="Flags\IranFlag.xaml.cs">
       <DependentUpon>IranFlag.xaml</DependentUpon>
     </Compile>
@@ -177,21 +182,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:\SharedProjects\WpfSharedClasses\WpfSharedClasses\WpfSharedClasses.csproj">
-      <Project>{7e6faf5d-6f41-4cf3-a431-c45624c6ba4e}</Project>
-      <Name>WpfSharedClasses</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pic\Iran\Anzali.PNG" />
     <Resource Include="Pic\Iran\Aras.PNG" />
     <Resource Include="Pic\Iran\Arvand.PNG" />
     <Resource Include="Pic\Iran\Kish.PNG" />
     <Resource Include="Pic\Iran\sardarebaghemelli.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
