@@ -3,7 +3,7 @@ PlateModel.Wpf
 
 2 May 2014
 
-A vehicle license plate -as it defined in Wikipedia- is a metal or plastic plate attached to a motor vehicle or trailer for official identification purposes.
+A vehicle license plate -as it's defined in Wikipedia- is a metal or plastic plate attached to a motor vehicle or trailer for official identification purposes.
 If you want to build a WPF program that shows license plates, you can use this project to demonstrate high quality license plates which are similar to the real plates.
 
 <h3>Project structure</h3>
