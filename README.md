@@ -35,6 +35,7 @@ The project is not limited to a specific country, and there are country categori
 
 <h3>How to use plates</h3>
 It's very easy to use plates in your WPF project. Just add the corresponding plate to your XAML file:
+
 > &lt;Viewbox Width="240" xmlns:irplate="clr-namespace:PlateModel.Wpf.Plates.Iran;assembly=PlateModel.Wpf"&gt;<br/>
 > &nbsp;&nbsp;&lt;irplate:IRNationalPlate Plate="{Binding MyPlate, Mode=OneWay}" /&gt;<br/>
 > &lt;/Viewbox&gt;
@@ -47,6 +48,7 @@ For example:
 
 <h3>Plate Inputs</h3>
 Plate inputs are simple textboxes decorated with some features of the corresponding plate. See this example:
+
 > &lt;StackPanel xmlns:irplate="clr-namespace:PlateModel.Wpf.Plates.Iran;assembly=PlateModel.Wpf"<br/>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:irplateInput="clr-namespace:PlateModel.Wpf.Plates.Iran.Input;assembly=PlateModel.Wpf"&gt;<br/>
 > &nbsp;&nbsp;&lt;irplate:IRNationalPlate Plate="{Binding Plate, ElementName=myPlateInput, Mode=OneWay}" /&gt;<br/>
