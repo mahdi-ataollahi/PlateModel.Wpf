@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="IRPlateModel.Wpf.Plates.Iran.IRHistoricalPlate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:flags="clr-namespace:IRPlateModel.Wpf.Vectors.Flags"
+             mc:Ignorable="d"
+             Name="plate"
+             Foreground="White"
+             FlowDirection="LeftToRight"
+             Height="180"
+             Width="360">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Border x:Name="brdMain"
+                Background="{Binding Foreground, ElementName=plate}"
+                BorderBrush="{Binding Foreground, ElementName=plate}"
+                BorderThickness="6"
+                CornerRadius="1">
+            <Grid>
+                <Grid.Resources>
+                    <Style x:Key="stl_platechar"
+                           TargetType="TextBlock">
+                        <Setter Property="FontFamily"
+                                Value="/IrPlateModel.Wpf;component/Fonts/#B Roya" />
+                        <Setter Property="FontWeight"
+                                Value="Bold" />
+                        <Setter Property="HorizontalAlignment"
+                                Value="Center" />
+                        <Setter Property="VerticalAlignment"
+                                Value="Center" />
+                        <Setter Property="TextAlignment"
+                                Value="Center" />
+                    </Style>
+                    <Style x:Key="stl_digit"
+                           TargetType="TextBlock"
+                           BasedOn="{StaticResource stl_platechar}">
+                        <Setter Property="Width"
+                                Value="215" />
+                        <Setter Property="FontSize"
+                                Value="75" />
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleY="1.1" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <Border CornerRadius="6"
+                        Width="122"
+                        HorizontalAlignment="Left"
+                        Background="#FF0147A9">
+                    <Grid>
+                        <Viewbox Width="40"
+                                 Height="22"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 Margin="6,11,0,0">
+                            <flags:IranFlag />
+                        </Viewbox>
+                        <TextBlock Text="I.R. IRAN"
+                                   FontWeight="SemiBold"
+                                   FontSize="10"
+                                   FontFamily="Arial"
+                                   VerticalAlignment="Top"
+                                   Margin="5,31,0,0"
+                                   Foreground="White"
+                                   LineStackingStrategy="BlockLineHeight"
+                                   LineHeight="16" />
+                        <Border BorderBrush="{Binding Foreground, ElementName=plate}"
+                                BorderThickness="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Width="108"
+                                Margin="0,0,0,7">
+                            <Image Source="/IrPlateModel.Wpf;component/Pic/Iran/sardarebaghemelli.jpg" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border CornerRadius="6"
+                        Width="222"
+                        Height="82"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="#FF643200">
+                    <TextBlock Text="تاریخی"
+                               FontSize="70"
+                               Margin="0,-10,0,0"
+                               Style="{StaticResource stl_platechar}" />
+                </Border>
+
+                <Border CornerRadius="6"
+                        Width="222"
+                        Height="82"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Background="#FF643200">
+                    <TextBlock x:Name="digits"
+                               Style="{StaticResource stl_digit}" />
+                </Border>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
+

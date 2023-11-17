@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net48;net6.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<Version>1.1.0</Version>
+		<Copyright>Copyright © Mahdi Ataollahi 2013-2023</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Pic\Iran\*.jpg" />
+		<None Remove="Pic\Iran\*.png" />
+		<Resource Include="Pic\Iran\*.jpg" />
+		<Resource Include="Pic\Iran\*.png" />
+		<None Remove="Fonts\*.ttf" />
+		<Resource Include="Fonts\*.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+	</ItemGroup>
+
+</Project>
