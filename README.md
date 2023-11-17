@@ -1,7 +1,7 @@
 PlateModel.Wpf
 ==============
 
-2 May 2014
+17 November 2023
 
 A vehicle license plate -as it's defined in Wikipedia- is a metal or plastic plate attached to a motor vehicle or trailer for official identification purposes.
 If you want to build a WPF program that shows license plates, you can use this project to demonstrate high quality license plates which are similar to the real plates.
@@ -36,7 +36,7 @@ The project is not limited to a specific country, and there are country categori
 <h3>How to use plates</h3>
 It's very easy to use plates in your WPF project. Just add the corresponding plate to your XAML file:
 
-> &lt;Viewbox Width="240" xmlns:irplate="clr-namespace:PlateModel.Wpf.Plates.Iran;assembly=PlateModel.Wpf"&gt;<br/>
+> &lt;Viewbox Width="240" xmlns:irplate="clr-namespace:IRPlateModel.Wpf.Plates.Iran;assembly=IRPlateModel.Wpf"&gt;<br/>
 > &nbsp;&nbsp;&lt;irplate:IRNationalPlate Plate="{Binding MyPlate, Mode=OneWay}" /&gt;<br/>
 > &lt;/Viewbox&gt;
 
@@ -49,8 +49,8 @@ For example:
 <h3>Plate Inputs</h3>
 Plate inputs are simple textboxes decorated with some features of the corresponding plate. See this example:
 
-> &lt;StackPanel xmlns:irplate="clr-namespace:PlateModel.Wpf.Plates.Iran;assembly=PlateModel.Wpf"<br/>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:irplateInput="clr-namespace:PlateModel.Wpf.Plates.Iran.Input;assembly=PlateModel.Wpf"&gt;<br/>
+> &lt;StackPanel xmlns:irplate="clr-namespace:IRPlateModel.Wpf.Plates.Iran;assembly=IRPlateModel.Wpf"<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:irplateInput="clr-namespace:IRPlateModel.Wpf.Plates.Iran.Input;assembly=IRPlateModel.Wpf"&gt;<br/>
 > &nbsp;&nbsp;&lt;irplate:IRNationalPlate Plate="{Binding Plate, ElementName=myPlateInput, Mode=OneWay}" /&gt;<br/>
 > &nbsp;&nbsp;&lt;irplateInput:IRNationalPlateInput x:Name="myPlateInput" /&gt;<br/>
 > &lt;/StackPanel&gt;
